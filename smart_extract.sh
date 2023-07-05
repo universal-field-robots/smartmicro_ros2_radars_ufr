@@ -42,7 +42,7 @@ echo
 function getSmartaccessBinaries {
     wget -c $URL_smartbinaries
     echo "extracting smart access"
-    tar xfz $smart_pack --strip-components=1 -C umrr_ros2_driver/smartmicro/
+    tar xfz $smart_pack --strip-components=1 -C ~/ozmin_atv_ws/src/smartmicro_ros2_radars_ufr/umrr_ros2_driver/smartmicro/
 }
 
 function cleanup {
