@@ -510,8 +510,10 @@ void SmartmicroRadarNode::targetlist_callback_umrr11(
     const auto timestamp = std::chrono::microseconds{port_header->GetTimestamp()};
     const auto sec = std::chrono::duration_cast<std::chrono::seconds>(timestamp);
     const auto nanosec = std::chrono::duration_cast<std::chrono::nanoseconds>(timestamp - sec);
-    msg.header.stamp.sec = sec.count();
-    msg.header.stamp.nanosec = nanosec.count();
+
+    msg.header.stamp = this->get_clock()->now();
+    // msg.header.stamp.sec = sec.count();
+    // msg.header.stamp.nanosec = nanosec.count();
     for (const auto & target : targetlist_port_umrr11->GetTargetList()) {
       const auto range = target->GetRange();
       const auto elevation_angle = target->GetElevationAngle();
@@ -546,8 +548,10 @@ void SmartmicroRadarNode::targetlist_callback_umrr96(
     const auto timestamp = std::chrono::microseconds{port_header->GetTimestamp()};
     const auto sec = std::chrono::duration_cast<std::chrono::seconds>(timestamp);
     const auto nanosec = std::chrono::duration_cast<std::chrono::nanoseconds>(timestamp - sec);
-    msg.header.stamp.sec = sec.count();
-    msg.header.stamp.nanosec = nanosec.count();
+
+    msg.header.stamp = this->get_clock()->now();
+    // msg.header.stamp.sec = sec.count();
+    // msg.header.stamp.nanosec = nanosec.count();
     for (const auto & target : targetlist_port_umrr96->GetTargetList()) {
       const auto range = target->GetRange();
       const auto elevation_angle = target->GetElevationAngle();
@@ -582,8 +586,10 @@ void SmartmicroRadarNode::targetlist_callback_umrr9f_v1_1_1(
     const auto timestamp = std::chrono::microseconds{port_header->GetTimestamp()};
     const auto sec = std::chrono::duration_cast<std::chrono::seconds>(timestamp);
     const auto nanosec = std::chrono::duration_cast<std::chrono::nanoseconds>(timestamp - sec);
-    msg.header.stamp.sec = sec.count();
-    msg.header.stamp.nanosec = nanosec.count();
+    // msg.header.stamp.sec = sec.count();
+    // msg.header.stamp.nanosec = nanosec.count();
+
+    msg.header.stamp = this->get_clock()->now();
     for (const auto & target : targetlist_port_umrr9f_v1_1_1->GetTargetList()) {
       const auto range = target->GetRange();
       const auto elevation_angle = target->GetElevationAngle();
@@ -618,8 +624,10 @@ void SmartmicroRadarNode::targetlist_callback_umrr9f_v2_0_0(
     const auto timestamp = std::chrono::microseconds{port_header->GetTimestamp()};
     const auto sec = std::chrono::duration_cast<std::chrono::seconds>(timestamp);
     const auto nanosec = std::chrono::duration_cast<std::chrono::nanoseconds>(timestamp - sec);
-    msg.header.stamp.sec = sec.count();
-    msg.header.stamp.nanosec = nanosec.count();
+
+    msg.header.stamp = this->get_clock()->now();
+    // msg.header.stamp.sec = sec.count();
+    // msg.header.stamp.nanosec = nanosec.count();
     for (const auto & target : targetlist_port_umrr9f_v2_0_0->GetTargetList()) {
       const auto range = target->GetRange();
       const auto elevation_angle = target->GetElevationAngle();
@@ -654,8 +662,9 @@ void SmartmicroRadarNode::targetlist_callback_umrr9d(
     const auto timestamp = std::chrono::microseconds{port_header->GetTimestamp()};
     const auto sec = std::chrono::duration_cast<std::chrono::seconds>(timestamp);
     const auto nanosec = std::chrono::duration_cast<std::chrono::nanoseconds>(timestamp - sec);
-    msg.header.stamp.sec = sec.count();
-    msg.header.stamp.nanosec = nanosec.count();
+    // msg.header.stamp.sec = sec.count();
+    // msg.header.stamp.nanosec = nanosec.count();
+    msg.header.stamp = this->get_clock()->now();
     for (const auto & target : targetlist_port_umrr9d->GetTargetList()) {
       const auto range = target->GetRange();
       const auto elevation_angle = target->GetElevationAngle();

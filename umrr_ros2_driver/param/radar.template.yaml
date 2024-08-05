@@ -1,4 +1,3 @@
----
 /**:
   ros__parameters:
     # The client_id to be set in smart_access_config.json, must be a unique integer.
@@ -8,7 +7,7 @@
       # This sets the port in the hw_inventory.json
       hw_port: 55555
       # This sets the iface_name in the hw_inventory.json
-      hw_iface_name: "enp0s31f6"
+      hw_iface_name: "eno1"
       # An array of sensors to subscribe to.
       sensors:
           # As many as 10 sensors all named as "sensor_<number>" in increasing order of numbers,
@@ -24,6 +23,6 @@
               # The port to be used.
               port: 55555
               # The frame_id to be set to the published messages.
-              frame_id: "umrr"
+              frame_id: "radar_link"
               # Specify the history size.
               history_size: 10
